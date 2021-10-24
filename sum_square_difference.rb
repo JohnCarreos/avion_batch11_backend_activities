@@ -13,11 +13,19 @@ def cycle_length(n)
 end
 
 def max_cycle_length(i, j)
+  arr = [*i..j]
   max_length = 0
-  
+  arr.map {|n|
+    if cycle_length(n) > max_length
+      max_length = cycle_length(n)
+    end}
+  puts "#{i} #{j} #{max_length}"
 end
 
 puts "Input Number: "
 input_num = gets.chomp
 
-arr_num = input_num.split(" ")
+arr_num = input_num.split(" ").map(&:to_i)
+
+max_cycle_length(arr_num[0], arr_num[1])
+
