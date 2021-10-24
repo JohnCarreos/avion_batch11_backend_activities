@@ -1,10 +1,8 @@
 def check_square(n)
-  if n < 0 
-    return false
-  elsif ((n ** 0.5) % 1) == 0
-    return true
+  if n < 0
+    false
   else
-    return false
+    ((n**0.5) % 1) == 0
   end
 end
 
