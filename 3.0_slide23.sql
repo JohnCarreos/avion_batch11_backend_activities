@@ -29,15 +29,18 @@ CREATE TABLE students (
 INSERT INTO students (id, first_name, middle_name, last_name, age, location)
 VALUES 
 (1, 'student1', 'middle1', 'last1', 18, 'manila'),
-(2, 'student2', 'middle2', 'last2', 18, 'manila'),
-(3, 'student3', 'middle3', 'last3', 18, 'makati'),
-(4, 'student4', 'middle4', 'last4', 18, 'laguna'),
-(5, 'student5', 'middle5', 'last5', 18, 'cebu'),
-(6, 'student6', 'middle6', 'last6', 18, 'davao');
+(2, 'student2', 'middle2', 'last2', 25, 'manila'),
+(3, 'student3', 'middle3', 'last3', 48, 'makati'),
+(4, 'student4', 'middle4', 'last4', 34, 'laguna'),
+(5, 'student5', 'middle5', 'last5', 23, 'cebu'),
+(6, 'student6', 'middle6', 'last6', 38, 'davao');
 
 
 select count(id) from students;
 select * from students where location = "manila";
 select avg(age) from students;
 select * from students order by id desc;
+
+
+
 
