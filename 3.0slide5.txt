@@ -1,0 +1,57 @@
+CREATE TABLE instructors (
+    id integer PRIMARY KEY,
+    first_name character varying(255) NOT NULL,
+    last_name character varying(255) NOT NULL,
+    lesson_id numeric,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+INSERT INTO instructors (id, first_name, last_name, lesson_id, created_at, updated_at)
+VALUES
+(1, 'Adrian', 'Co', 1, current_timestamp, current_timestamp),
+(2, 'Analyn', 'Cajocson', 1, current_timestamp, current_timestamp),
+(3, 'Pau', 'Riosa', 3, current_timestamp, current_timestamp),
+(4, 'Maurus', 'Vitor', 3, current_timestamp, current_timestamp),
+(5, 'John', 'Young', 6, current_timestamp, current_timestamp);
+
+SELECT l.name, i.first_name, i.last_name FROM lessons l FULL JOIN instructors i ON i.lesson_id = l.id;
+
+DELETE FROM lessons WHERE id = 3;
+
+INSERT INTO lessons (id, name, description, price, created_at, updated_at, front_end, back_end) 
+VALUES 
+(3, 'Javascript', 'Javascript is a programmming language for frontend.', 99.99, current_timestamp, current_timestamp, true, true),
+(4, 'Rust', 'Rust is blazingly fast and memory-efficient: with no runtime or garbage collector.', 499.99, current_timestamp, current_timestamp, false, true),
+(5, 'Golang', 'Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.', 499.99, current_timestamp, current_timestamp, false, true)
+;
+
+#################################
+
+CREATE TABLE classrooms (
+    id integer PRIMARY KEY,
+    student_id numeric,
+    section character varying(255) NOT NULL
+);
+
+INSERT INTO classrooms (id, student_id, section)
+VALUES
+(1, 1, 'A'),
+(2, 2, 'A'),
+(3, 3, 'B'),
+(4, 4, 'C'),
+(5, 5, 'B'),
+(6, 6, 'A'),
+(7, 7, 'C'),
+(8, 8, 'B'),
+(9, 9, 'B'),
+(10, 10, 'C');
+
+SELECT c.id, c.student_id, c.section, s.first_name, s.last_name, s.age, s.location FROM students s INNER JOIN classrooms c ON s.id = c.student_id;
+
+SELECT c.id, c.student_id, c.section, s.first_name, s.last_name, s.age, s.location FROM students s LEFT JOIN classrooms c ON s.id = c.student_id;
+
+SELECT c.id, c.student_id, c.section, s.first_name, s.last_name, s.age, s.location FROM students s RIGHT JOIN classrooms c ON s.id = c.student_id;
+
+SELECT c.id, c.student_id, c.section, s.first_name, s.last_name, s.age, s.location FROM students s FULL JOIN classrooms c ON s.id = c.student_id;
+

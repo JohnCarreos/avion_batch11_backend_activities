@@ -28,12 +28,12 @@ CREATE TABLE students (
 
 INSERT INTO students (id, first_name, middle_name, last_name, age, location)
 VALUES 
-(1, 'student1', 'middle1', 'last1', 18, 'manila'),
-(2, 'student2', 'middle2', 'last2', 25, 'manila'),
-(3, 'student3', 'middle3', 'last3', 48, 'makati'),
-(4, 'student4', 'middle4', 'last4', 34, 'laguna'),
-(5, 'student5', 'middle5', 'last5', 23, 'cebu'),
-(6, 'student6', 'middle6', 'last6', 38, 'davao');
+(1, 'Juan', 'Blank', 'Cruz', 18, 'Manila'),
+(2, 'Anne', 'Blank', 'Wall', 20, 'Manila'),
+(3, 'Theresa', 'Blank', 'Joseph', 21, 'Manila'),
+(4, 'Issac', 'Blank', 'Gray', 19, 'Laguna'),
+(5, 'Zack', 'Blank', 'Matthews', 22, 'Marikina'),
+(6, 'Finn', 'Blank', 'Lam', 25, 'Manila');
 
 
 select count(id) from students;
