@@ -33,4 +33,4 @@ DELETE FROM students_2 WHERE age > 30;
 
 SELECT name FROM students_2;
 
-SELECT name, course WHERE age < 20;
+SELECT name, course FROM students_2 WHERE age < 20;
