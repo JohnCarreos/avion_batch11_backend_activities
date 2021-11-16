@@ -9,4 +9,6 @@ def disemvowel(str)
     return result.join
 end
 
+
 puts disemvowel("Hello Earth!")
+puts disemvowel("Hello World!")
