@@ -1,4 +1,4 @@
-def centuryFromYear(year)
+def century_from_ear(year)
     return (year + 99) / 100
 end
 
