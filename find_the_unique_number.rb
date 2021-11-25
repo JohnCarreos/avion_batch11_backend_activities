@@ -1,6 +1,8 @@
 def find_uniq(arr)
   arr.each do |n|
-    return n if arr.count(n) == 1
+    if arr.count(n) == 1
+      return n
+    end
   end
 end
 
